@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Results - Airbridge</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Data Manager -->
+    <script src="js/data-manager.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark glass-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html"><i
+                    class="bi bi-airplane-engines me-2"></i>Airbridge</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Flights</a></li>
+                    <li class="nav-item ms-lg-2"><a class="btn btn-outline-light rounded-pill px-4"
+                            href="login.html">Sign In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="page-header d-flex align-items-center justify-content-center">
+        <div class="header-overlay"></div>
+        <div class="container position-relative z-2 text-center mt-5">
+            <h1 class="display-5 fw-bold text-white mb-2">Select Your Flight</h1>
+            <p class="lead text-white-50 mb-0" id="search-summary">Searching available flights...</p>
+        </div>
+    </header>
+
+    <!-- Flight Results Section -->
+    <section class="py-5 bg-light-subtle">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+
+                    <!-- Search Filters (Optional for future) -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="fw-bold mb-0">Available Flights</h4>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-dark dropdown-toggle rounded-pill px-4" type="button"
+                                data-bs-toggle="dropdown">
+                                Sort by: Price
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
+                                <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
+                                <li><a class="dropdown-item" href="#">Duration: Shortest</a></li>
+                                <li><a class="dropdown-item" href="#">Departure: Earliest</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Flight List Container -->
+                    <div id="flight-results-container" class="d-flex flex-column gap-4">
+                        <!-- Flight Item Template (Will be injected by JS) -->
+                        <!-- Example Structure for dev reference: -->
+                        <!-- 
+                        <div class="card border-0 shadow-sm rounded-4 flight-card overflow-hidden">
+                            <div class="card-body p-0">
+                                <div class="row g-0 align-items-center">
+                                    <div class="col-md-3 p-4 border-end border-light">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="airline-logo bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                                <i class="bi bi-airplane-fill fs-4"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="fw-bold mb-0">Airbridge Airways</h6>
+                                                <small class="text-muted">AB-304</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 p-4 border-end border-light">
+                                        <div class="d-flex justify-content-between align-items-center text-center">
+                                            <div>
+                                                <h4 class="fw-bold mb-0">10:00</h4>
+                                                <small class="text-muted">JFK</small>
+                                            </div>
+                                            <div class="flight-route position-relative px-3 flex-grow-1">
+                                                <hr class="border-primary opacity-50 mb-0" style="border-top: 2px dashed;">
+                                                <i class="bi bi-airplane-fill text-primary position-absolute top-50 start-50 translate-middle" style="transform: rotate(90deg);"></i>
+                                                <small class="text-muted d-block mt-2">7h 30m</small>
+                                            </div>
+                                            <div>
+                                                <h4 class="fw-bold mb-0">17:30</h4>
+                                                <small class="text-muted">LHR</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 p-4">
+                                        <div class="row g-2">
+                                            <div class="col-6">
+                                                <div class="p-3 border rounded-3 text-center price-option" role="button">
+                                                    <small class="d-block text-muted mb-1">Economy</small>
+                                                    <h5 class="fw-bold text-dark mb-0">$450</h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="p-3 border border-primary bg-primary bg-opacity-10 rounded-3 text-center price-option active" role="button">
+                                                    <small class="d-block text-primary mb-1">First Class</small>
+                                                    <h5 class="fw-bold text-primary mb-0">$1,200</h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 mt-3">
+                                                <button class="btn btn-primary w-100 rounded-pill py-2 fw-bold">Select Flight</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        -->
+                    </div>
+
+                    <!-- No Results State (Hidden by default) -->
+                    <div id="no-results" class="text-center py-5 d-none">
+                        <i class="bi bi-search fs-1 text-muted mb-3 d-block"></i>
+                        <h4 class="fw-bold text-muted">No flights found</h4>
+                        <p class="text-muted">Try adjusting your search criteria</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Airbridge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS + Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6610f2;
+    --dark-bg: #0f172a;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text-light: #f8f9fa;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.glass-nav {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.glass-nav.scrolled {
+    background: rgba(15, 23, 42, 0.95);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8) !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #fff !important;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    background: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.8));
+    z-index: 1;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+}
+
+/* Form Styling */
+.form-control,
+.input-group-text,
+.btn-check+.btn {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-control[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* Swap Button */
+.swap-btn {
+    transition: transform 0.3s ease;
+}
+
+.swap-btn:hover {
+    transform: rotate(180deg);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    opacity: 0;
+}
+
+.delay-100 {
+    animation-delay: 0.2s;
+}
+
+/* Destinations */
+.destination-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.destination-card img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.destination-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Login Page Styles */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    position: relative;
+}
+
+.login-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(13, 110, 253, 0.2));
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-pills .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+}
+
+.form-floating label {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.back-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.back-link:hover {
+    opacity: 1;
+    color: white;
+}
+
+.hover-white:hover {
+    color: white !important;
+}
+
+/* Flight Results Page */
+.page-header {
+    position: relative;
+    height: 40vh;
+    min-height: 300px;
+    background: url('https://images.unsplash.com/photo-1559268975-54e588e34725?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9));
+    z-index: 1;
+}
+
+.flight-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.price-option {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.price-option:hover {
+    border-color: var(--primary-color) !important;
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+.price-option.active {
+    border-color: var(--primary-color) !important;
+    background-color: rgba(13, 110, 253, 0.1);
+}
+
+/* Payment Page */
+.payment-page {
+    background: url('https://images.unsplash.com/photo-1559268975-54e588e34725?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.payment-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9));
+    z-index: -1;
+}
+
+.contact{
+ background-color: rgba(204, 68, 18, 0.05);
+}
+
