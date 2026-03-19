@@ -1,38 +1,61 @@
-Airbridge - Airline Reservation System
-Airbridge is a modern web application designed for seamless flight searching, booking, and administrative management. It features a clean, responsive "glassmorphism" UI and a robust simulation of airline operations.
+✈️ Airbridge — Flight Booking System
 
-🚀 Features
+A full-stack flight booking web application built with HTML, CSS, JavaScript (frontend) and PHP + MySQL (backend).
 
-For Travelers
-Smart Search: Search for flights by origin, destination, and date.
 
-Live Selection: Compare Economy and First Class pricing with real-time updates.
+🌐 Live Demo
 
-Booking System: Secure checkout process with card number formatting and instant confirmation.
+Deploy on InfinityFree, 000webhost, or any PHP hosting provider.
 
-User Dashboard: View personal booking history and manage profile details.
 
-For Administrators
-Flight Management: Add new flight schedules including airline details, aircraft type, times, and pricing.
+📸 Features
 
-Inventory Control: Remove flights from the active schedule via a secure dashboard.
-
-Booking Oversight: Monitor all passenger bookings across the entire platform.
+🔍 Flight Search — Search flights by origin, destination, and date
+🎫 Flight Booking — Select economy or first class and proceed to payment
+💳 Payment Page — Secure payment form with booking confirmation
+👤 User Profile — View all personal bookings
+🔐 Authentication — Register, login, and logout with session management
+🛡️ Admin Dashboard — Manage flights and view all bookings
+📱 Responsive Design — Works on mobile, tablet, and desktop
 
 🛠️ Tech Stack
-Frontend: HTML5, CSS3 (Custom Glassmorphism), Bootstrap 5
+LayerTechnologyFrontendHTML5, CSS3, JavaScript (ES6+)UI FrameworkBootstrap 5.3IconsBootstrap IconsFontsGoogle Fonts (Outfit)BackendPHP 8+DatabaseMySQLAuthPHP Sessions + password_hash (bcrypt)
 
-Interactivity: Vanilla JavaScript (ES6+)
+📁 Project Structure
+airbridge/
+├── index.html          # Home page with flight search
+├── flights.html        # Flight results listing
+├── payment.html        # Payment & booking confirmation
+├── profile.html        # User bookings page
+├── login.html          # Login page (Passenger + Admin)
+├── register.html       # Registration page
+├── admin.html          # Admin dashboard
+├── style.css           # Global stylesheet
+├── script.js           # Frontend JavaScript logic
+├── database.sql        # MySQL database setup file
+├── js/
+│   └── data-manager.js # API connector (JS ↔ PHP)
+└── api/
+    ├── config.php      # Database configuration
+    ├── auth.php        # Register / Login / Logout / Me
+    ├── flights.php     # Get / Add / Delete flights
+    ├── bookings.php    # Create / Get bookings
+    └── functions.php   # Helper functions
 
+    🔐 Default Admin Account
+FieldValue
+📧 Email: admin@airbridge.com
+🔑 Password: admin123
+🛡️ Role: Admin
+
+⚠️ Important: Change the admin password immediately after first login in a production environment.
+
+🙏 Credits
+
+Background images: Unsplash
+UI Framework: Bootstrap 5
 Icons: Bootstrap Icons
+Fonts: Google Fonts — Outfit
 
-Data Management: LocalStorage-based DataManager for persistent data simulation.
 
-📋 Admin Access
-To manage the platform, use the following credentials on the login.html page:
-
-**Email: admin@airbridge.com
-
-Password: admin**
-
-Once logged in, administrators are automatically redirected to the Admin Dashboard (admin.html).
+<p align="center">Made with ❤️ — Airbridge Flight Booking System</p>
