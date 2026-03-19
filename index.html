@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbridge - Premium Flight Booking</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Data Manager -->
+    <script src="js/data-manager.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark glass-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html"><i
+                    class="bi bi-airplane-engines me-2"></i>Airbridge</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#destinations">Aireports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="flights.html">Flight<a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-2"><a class="btn btn-outline-light rounded-pill px-4"
+                            href="login.html">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section d-flex align-items-center justify-content-center">
+        <!-- Background Overlay -->
+        <div class="hero-overlay"></div>
+
+        <div class="container position-relative z-2">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8 animate-fade-up">
+                    <h1 class="display-3 fw-bold text-white mb-3">Discover Your Next Adventure</h1>
+                    <p class="lead text-white-50 mb-0">Experience premium travel with Airbridge. The world is just a
+                        flight away.</p>
+                </div>
+            </div>
+
+            <!-- Booking Form -->
+            <div class="row justify-content-center">
+                <div class="col-xl-10 animate-fade-up delay-100">
+                    <div class="booking-form p-4 rounded-4 shadow-lg glass-card">
+                        <form id="flightSearchForm" class="row g-3 align-items-end">
+                            
+
+                            <!-- Inputs -->
+                            <div class="col-md-3">
+                                <label class="form-label text-white-50 small">From</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-transparent border-end-0 text-white"><i
+                                            class="bi bi-geo-alt"></i></span>
+                                    <input type="text"
+                                        class="form-control border-start-0 bg-transparent text-white ps-0"
+                                        placeholder="New York (JFK)">
+                                </div>
+                            </div>
+
+                            <div class="col-md-1 d-flex justify-content-center align-items-center">
+                                <button type="button"
+                                    class="btn btn-sm btn-outline-light rounded-circle swap-btn p-2 mt-3"
+                                    title="Swap Locations">
+                                    <i class="bi bi-arrow-left-right"></i>
+                                </button>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label class="form-label text-white-50 small">To</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-transparent border-end-0 text-white"><i
+                                            class="bi bi-geo"></i></span>
+                                    <input type="text"
+                                        class="form-control border-start-0 bg-transparent text-white ps-0"
+                                        placeholder="London (LHR)">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <label class="form-label text-white-50 small">Departure</label>
+                                <input type="date" class="form-control bg-transparent text-white">
+                            </div>
+
+                            <div class="col-md-2">
+                                <label class="form-label text-white-50 small">Return</label>
+                                <input type="date" class="form-control bg-transparent text-white">
+                            </div>
+
+                            <div class="col-md-1">
+                                <button type="submit" 
+                                    class="btn btn-primary w-100 h-100 rounded-3 d-flex align-items-center justify-content-center flight-search-btn" >
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Happy passenger Section -->
+        <section class="Passengers">
+                <div class="container">
+                    <div class="card bg-dark text-white mx-auto">
+                        <div class="row">
+                            <div class="col-md-3 align-items-center ">
+                                <h1 class="fw-bold">2<span class="Passengers_containt">M</span></h1>
+                                <p>Happy Passengers</p>
+                            </div>
+                            <div class="col-md-3 align-items-center ">
+                                <h1 class="fw-bold">50<span class="Passengers_containt">+</span></h1>
+                                <p>destinations</p>
+                            </div>
+                            <div class="col-md-3 align-items-center ">
+                                <h1 class="fw-bold">98<span class="Passengers_containt">%</span></h1>
+                                <p>On-time Rate</p>
+                            </div>
+                            <div class="col-md-3 align-items-center ">
+                                <h1 class="fw-bold">5<span class="Passengers_containt">+</span></h1>
+                                <p>Years of Service</p>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+        </section>
+
+    <!-- About us Section -->
+<section class="AboutUs ">
+  <div class="container py-4 pt-5">
+    <div class="row align-items-center">
+      
+      <!-- Left side: Text -->
+      <div class="col-md-6">
+        <span class="Passengers_containt" style="font-size: 15px;">Who We Are</span>
+            <h1 class="fw-bold travel" style="font-size: 40px;">
+            Built for travelers, by travelers
+            </h1>
+
+        <p>
+          Airbridge started in 2015 as a small startup with a bold idea: make booking international flights as easy as ordering a coffee. Today, we serve millions of passengers across 150+ destinations, partnering with the world's leading airlines to bring you the best fares with zero hidden fees.</p>
+          <p>
+          We believe travel changes people — it opens minds, builds bridges between cultures, and creates memories that last a lifetime. That's why we work tirelessly to remove every barrier between you and your next adventure.
+        </p>
+        <div class="row">
+            <div class="col-md-3">
+                <span class="Passengers_containt" >$0</span><br>
+                <small>Hidden fees, ever</small>
+            </div>
+            <div class="col-md-3">
+                <span class="Passengers_containt" >24/7</span><br>
+                <small>Customer support</small>
+            </div>
+            <div class="col-md-3">
+                <span class="Passengers_containt" >SSL</span><br>
+                <small>Secure payments</small>
+            </div>
+            
+        </div>
+      </div>
+
+      <!-- Right side: Images -->
+      <div class="col-md-6 text-center">
+        <div class="row">
+          <div class="col-6">
+            <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=400&h=280&fit=crop"
+                 class="img-fluid rounded"
+                 style="width: 90%; height: auto; border-radius: 25px;">
+          </div>
+          <div class="col-6">
+            <img src="https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?w=400&h=280&fit=crop"
+                 class="img-fluid rounded"
+                 style="width: 90%; height: auto; border-radius: 25px;">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+          <!-- image Section -->
+        
+
+    <!-- Features Section -->
+    <section class="py-5" id="destinations">
+        <div class="container py-5">
+            <h2 class="text-center mb-5 fw-bold text-dark">Popular Aireports</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm destination-card overflow-hidden rounded-4">
+                        <img src="images/Airport BIA Colombo.jpg">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Katunayake Airport</h5>
+                            <p class="card-text text-muted">Bandaranaike International Airport is the main international
+                                airport in Sri Lanka.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm destination-card overflow-hidden rounded-4">
+                        <img src="images/Charles de Gaulle Airport.jpg" class="card-img-top"
+                            alt="Paris">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Charles de Gaulle Airport (CDG)</h5>
+                            <p class="card-text text-muted">Paris Charles de Gaulle International Airport, also known as
+                                Roissy Airport, is the primary international airport serving Paris, the capital of
+                                France.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm destination-card overflow-hidden rounded-4">
+                           <image src="images/Tokyo-Haneda-2019-Slot-Awards.jpg" class="card-img-top" alt="Tokyo">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Haneda Airport (HND)</h5>
+                            <p class="card-text text-muted">Haneda Airport, officially Tokyo International Airport and
+                                sometimes abbreviated to Tokyo-Haneda.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+            <!--Popular Destinations-->
+        <section class="py-5" id="destinations">
+        <div class="container py-5">
+            <h2 class="text-center mb-5 fw-bold text-dark">Popular Countries</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm destination-card overflow-hidden rounded-4">
+
+                        <div id="France_destinations" class="carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                    <img src="images\ifel.jpg" class="d-block w-100" alt="Eiffel Tower">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="images\French Riviera.jpg" class="d-block w-100" alt="French Riviera">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="images\Mont Saint‑Michel.jpg" class="d-block w-100" alt="Mont Saint‑Michel">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#France_destinations" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#France_destinations" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                                </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">France</h5>
+                            <p class="card-text text-muted">France is famous for its romantic cities, historic architecture, and beautiful countryside. 
+                                                            Places like Eiffel Tower and the lavender fields of Provence attract millions of visitors.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm destination-card overflow-hidden rounded-4">
+                        
+                            <div id="Italy_destinations" class="carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                    <img src="images/italy_01.jpg" class="d-block w-100" alt="Eiffel Tower">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="images/italy02.jpg" class="d-block w-100" alt="French Riviera">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="images/italy03.jpg" class="d-block w-100" alt="Mont Saint‑Michel">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#Italy_destinations" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#Italy_destinations" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                                </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Italy</h5>
+                            <p class="card-text text-muted">Italy is admired for its historic cities, art, culture, and stunning coastlines. 
+                                                            Places such as Venice and Amalfi Coast are famous for their beauty.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm destination-card overflow-hidden rounded-4">
+                        
+                            <div id="Switzerland_destinations" class="carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                    <img src="images/Switzerland03.jpg" class="d-block w-100" alt="Eiffel Tower">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="images/Switzerland02.jpg" class="d-block w-100" alt="French Riviera">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="images/Switzerland01.jpg" class="d-block w-100" alt="Mont Saint‑Michel">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#Switzerland_destinations" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#Switzerland_destinations" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                                </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Switzerland</h5>
+                            <p class="card-text text-muted">Switzerland is famous for its snowy Alps, clear lakes, and green valleys. 
+                                                            Scenic places like Interlaken offer breathtaking mountain views.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- contact-->
+    <section class="py-5 contact" id="contact">
+        <footer class="bg-dark text-white py-5 mt-auto">
+    <div class="container">
+        <div class="row g-4 mb-4">
+            <div class="col-md-4">
+                <h5 class="fw-800 mb-3"><i class="bi bi-airplane-engines me-2 text-primary"></i>Airbridge</h5>
+                <p style="color:rgba(255,255,255,0.45); font-size:0.88rem; line-height:1.7">Connecting the world through premium, transparent, and effortless air travel booking since 2015.</p>
+            </div>
+            <div class="col-6 col-md-2 offset-md-1">
+                <h6 class="fw-700 mb-3 text-white-50" style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase">Navigate</h6>
+                <ul class="list-unstyled" style="font-size:0.88rem">
+                    <li class="mb-2"><a href="index.html" class="text-decoration-none" style="color:rgba(255,255,255,0.55)">Home</a></li>
+                    <li class="mb-2"><a href="flights.html" class="text-decoration-none" style="color:rgba(255,255,255,0.55)">Flights</a></li>
+                    <li class="mb-2"><a href="about.html" class="text-decoration-none" style="color:rgba(255,255,255,0.55)">About Us</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-2">
+                <h6 class="fw-700 mb-3 text-white-50" style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase">Account</h6>
+                <ul class="list-unstyled" style="font-size:0.88rem">
+                    <li class="mb-2"><a href="login.html" class="text-decoration-none" style="color:rgba(255,255,255,0.55)">Sign In</a></li>
+                    <li class="mb-2"><a href="register.html" class="text-decoration-none" style="color:rgba(255,255,255,0.55)">Register</a></li>
+                    <li class="mb-2"><a href="profile.html" class="text-decoration-none" style="color:rgba(255,255,255,0.55)">My Bookings</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h6 class="fw-700 mb-3 text-white-50" style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase">Connect</h6>
+                <div class="d-flex gap-2">
+                    <a href="#" class="btn btn-sm btn-outline-secondary rounded-circle p-1" style="width:36px;height:36px;line-height:1.4"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary rounded-circle p-1" style="width:36px;height:36px;line-height:1.4"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary rounded-circle p-1" style="width:36px;height:36px;line-height:1.4"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr style="border-color:rgba(255,255,255,0.08)">
+        <p class="mb-0 text-center" style="color:rgba(255,255,255,0.35); font-size:0.82rem">&copy; 2026 Airbridge. All rights reserved.</p>
+    </div>
+</footer>
+    </section>
+
+    
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
